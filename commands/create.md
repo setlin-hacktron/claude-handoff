@@ -19,7 +19,17 @@ Review the conversation history to extract:
 - User preferences expressed during the session
 - Error messages encountered and how they were resolved
 
-## Write HANDOFF.md
+## Where to Save
+
+Handoffs live in a **consolidated `handoffs/` directory at the workspace root**, one file per feature/worktree, so concurrent handoffs never collide on a shared `HANDOFF.md`.
+
+1. **Directory**: `<workspace-root>/handoffs/`. The workspace root is the top-level directory of your session (the primary working directory). For git **worktrees**, use the parent directory that holds the worktrees — NOT the worktree checkout — so the handoff survives worktree deletion. Create the directory if it doesn't exist (`mkdir -p`).
+2. **Filename**: a kebab-case feature slug. Prefer the current git branch with `/`→`-` (e.g. `fix/github-install-request-plg` → `fix-github-install-request-plg.md`); fall back to a 2–4 word task slug when not on a feature branch.
+3. **Override**: if `$ARGUMENTS` is a path or name, use that instead.
+
+Example: `~/Desktop/hacktron/handoffs/fix-github-install-request-plg.md`. Do NOT write `HANDOFF.md` into a repo/worktree root anymore.
+
+## Write the handoff
 
 Use this structure (omit empty sections, but NEVER omit Failed Approaches if any exist):
 
@@ -138,4 +148,4 @@ Example:
 - If there's a blocker, say so prominently
 - Omit empty sections (except Failed Approaches - say "None" if truly nothing failed)
 
-Save to `HANDOFF.md` in the working directory. If `$ARGUMENTS` specifies a path, use that instead.
+Save to `<workspace-root>/handoffs/<feature-slug>.md` (see **Where to Save** above). If `$ARGUMENTS` specifies a path, use that instead.

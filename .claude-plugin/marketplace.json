@@ -1,20 +1,20 @@
 {
-  "name": "handoff-marketplace",
+  "name": "handoff-setlin",
   "owner": {
-    "name": "willseltzer"
+    "name": "setlin-hacktron"
   },
   "metadata": {
-    "description": "Handoff plugin for Claude Code"
+    "description": "Handoff plugin (setlin fork) — per-feature handoffs/ directory, branch-slug naming"
   },
   "plugins": [
     {
       "name": "handoff",
       "source": {
         "source": "github",
-        "repo": "willseltzer/claude-handoff"
+        "repo": "setlin-hacktron/claude-handoff"
       },
-      "description": "Hand off context to any AI coding agent",
-      "version": "1.0.0"
+      "description": "Hand off context to any AI coding agent (per-feature handoffs/ dir)",
+      "version": "1.1.0"
     }
   ]
 }

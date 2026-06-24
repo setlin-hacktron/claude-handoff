@@ -1,11 +1,12 @@
 {
   "name": "handoff",
-  "description": "Hand off context to any AI coding agent. Creates comprehensive handoff documents that capture the current task, progress, modified files, and all relevant context needed to seamlessly continue work in any AI assistant (Claude Code, Cursor, Copilot, Aider, etc.).",
-  "version": "1.0.0",
+  "description": "Hand off context to any AI coding agent. Creates comprehensive handoff documents that capture the current task, progress, modified files, and all relevant context. Fork: writes one file per feature into a consolidated handoffs/ directory named by git branch slug, so concurrent worktrees never collide.",
+  "version": "1.1.0",
   "author": {
-    "name": "willseltzer"
+    "name": "setlin-hacktron",
+    "fork_of": "willseltzer/claude-handoff"
   },
   "license": "MIT",
-  "homepage": "https://github.com/willseltzer/claude-handoff",
-  "repository": "https://github.com/willseltzer/claude-handoff"
+  "homepage": "https://github.com/setlin-hacktron/claude-handoff",
+  "repository": "https://github.com/setlin-hacktron/claude-handoff"
 }
