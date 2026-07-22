@@ -6,10 +6,14 @@ Resume work from a handoff created by another AI agent.
 
 ## 1. Find and Read the Handoff
 
-Look for the handoff document:
-- If `$ARGUMENTS` is provided, read that path
-- Otherwise, check for `HANDOFF.md` in the current directory
-- If not found, ask the user for the path
+Handoffs live in a consolidated `handoffs/` directory at the workspace root (the top-level session directory; for git worktrees, the parent that holds them), one file per feature/branch slug.
+
+Look for the handoff document, in order:
+- If `$ARGUMENTS` is provided, read that path (or `handoffs/$ARGUMENTS.md`)
+- Otherwise, look in `<workspace-root>/handoffs/` for a file matching the current git branch slug (branch with `/`→`-`)
+- If no branch match, list the files in `handoffs/` and ask the user which to resume
+- Legacy fallback: a `HANDOFF.md` in the current directory
+- If nothing is found, ask the user for the path
 
 Read the entire handoff document carefully.
 
